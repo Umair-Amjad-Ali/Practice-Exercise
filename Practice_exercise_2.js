@@ -54,3 +54,23 @@ const Fibonacci = (number) => {
 console.log(Fibonacci(5));
 
 // Write a program that takes an array of numbers as input and outputs the largest and smallest numbers in the array.
+const findMinMax = (numbers) => {
+  let minMax = { min: numbers[0], max: numbers[0] };
+
+  for (let i = 1; i < numbers.length; i++) {
+    if (numbers[i] < minMax.min) {
+      minMax.min = numbers[i];
+    }
+    if (numbers[i] > minMax.max) {
+      minMax.max = numbers[i];
+    }
+  }
+
+  return minMax;
+};
+
+// This is an example usage of the findMinMax function.
+let numbers = [4, 7, 2, 8, 1, 5];
+let result = findMinMax(numbers);
+console.log("Smallest number: " + result.min);
+console.log("Largest number: " + result.max);
